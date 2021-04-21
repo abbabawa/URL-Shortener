@@ -11,18 +11,17 @@ test("Test Query", async (done) => {
     .post("/graphiql")
     .send({
       query: `query{
-	      	testGraphql
+	      	shortenURL(url: "http://www.domain.com/")
 	  	}`,
     })
     .set("Accept", "application/json")
     .expect("Content-Type", /json/)
     .expect(200)
     .end(function (err, res) {
-      if (err) return done(err);console.log(res.body)
+      if (err) return done(err);
       expect(res.body).toBeInstanceOf(Object);
-      expect(res.body.data.testGraphql).toEqual("Query was successfull");
+      expect(res.body.data.shortenURL).not.toEqual("The string passed is not a valid URL");
       done();
     });
 });
-
 

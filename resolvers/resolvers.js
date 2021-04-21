@@ -11,7 +11,12 @@ const resolvers = {
 	shortenURL: (input)=>{
 		let url = input.url
 		if(isUrlValid(url)){
-			let randomString = Math.random().toString(36).substr(6, 6)
+			//check if the url is a duplicate. If its a duplicate, return previously generated url
+			for(const temp in urlInputs){console.log(urlInputs)
+				if(urlInputs[temp] == url)
+					return domain+""+temp
+			}
+			let randomString = Math.random().toString(36).substr(6, 6) //Generate random string
 			urlInputs[randomString] = url
 			return domain+""+randomString
 		}else{
