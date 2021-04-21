@@ -1,6 +1,8 @@
 const app = require("../server");
 const supertest = require("supertest");
 
+const resolver = require("../resolvers/resolvers")
+
 const request = supertest(app);
 
 test("Test Query", async (done) => {
@@ -22,3 +24,5 @@ test("Test Query", async (done) => {
       done();
     });
 });
+
+
