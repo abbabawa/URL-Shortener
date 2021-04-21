@@ -4,7 +4,7 @@
   "description": "URL shortener is a simple (GraphQL) web application that consists of a single query which accepts a URL and returns a shorter version of the given URL.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,9 @@
     "express-graphql": "^0.12.0",
     "graphql": "^15.5.0",
     "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "supertest": "^6.1.3"
   }
 }
