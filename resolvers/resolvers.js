@@ -1,8 +1,8 @@
 const URL = require("url").URL;
-const os = require("os");
-let domain = "http://localhost:4000/"
 
-let urlInputs = {}
+let domain = "https://ancient-meadow-13045.herokuapp.com"
+
+let urlInputs = require("../db/data_store")
 
 const resolvers = {
 	testGraphql: ()=>{
@@ -12,7 +12,7 @@ const resolvers = {
 		let url = input.url
 		if(isUrlValid(url)){
 			let randomString = Math.random().toString(36).substr(6, 6)
-			urlInputs.randomString = url
+			urlInputs[randomString] = url
 			return domain+""+randomString
 		}else{
 			return "The string passed is not a valid URL"
