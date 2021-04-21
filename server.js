@@ -2,17 +2,9 @@ var express = require('express');
 var { graphqlHTTP } = require('express-graphql');
 var { buildSchema } = require('graphql');
 
-var schema = buildSchema(`
-  type Query {
-  	testGraphql: String
-  }
-`)
+var schema = require('./schemas/schema');
 
-var root = {
-	testGraphql: ()=>{
-		return "Query was successfull"
-	}
-}
+var root = require("./resolvers/resolvers")
 var app = express();
 app.use('/graphiql', graphqlHTTP({
   schema: schema,
@@ -20,4 +12,3 @@ app.use('/graphiql', graphqlHTTP({
   graphiql: true,
 }));
 module.exports = app;
-//git commit -m "Testing environment setup with jest and supertest"
