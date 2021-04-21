@@ -1,0 +1,26 @@
+{
+  "name": "URL-Shortener",
+  "version": "1.0.0",
+  "description": "URL shortener is a simple (GraphQL) web application that consists of a single query which accepts a URL and returns a shorter version of the given URL.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abbabawa/URL-Shortener.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abbabawa/URL-Shortener/issues"
+  },
+  "homepage": "https://github.com/abbabawa/URL-Shortener#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.5.0",
+    "nodemon": "^2.0.7"
+  }
+}
