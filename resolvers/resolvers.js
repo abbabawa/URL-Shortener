@@ -1,6 +1,6 @@
 const URL = require("url").URL;
 
-let domain = "https://ancient-meadow-13045.herokuapp.com"
+let domain = "https://ancient-meadow-13045.herokuapp.com/"
 
 let urlInputs = require("../db/data_store")
 
